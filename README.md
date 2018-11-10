@@ -7,8 +7,8 @@
 Web上でAWKを試すためのサイト<br>
 <br>
 以下を使用しています。
-- JavaScriptフレームワーク：**Vue.js**
-- CSSフレームワーク：**bulma**
+- JavaScriptフレームワーク：**Vue.js**
+- CSSフレームワーク：**bulma**
 
 
 # WebSite
