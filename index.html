@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Awk In Web</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/awk_web.js"></script>
+</head>
+
+<body>
+    <main>
+        <div id="component_main" v-cloak>
+            <!-- command -->
+            <div class="row columns">
+                <div class="column">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            <span class="is-size-3 has-text-weight-bold">awk command</span>
+                        </div>
+                        <div class="message-body">
+                            <div class="field is-expanded">
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <a class="button is-static is-size-3 has-text-weight-bold">
+                                            awk&nbsp;&nbsp;'
+                                        </a>
+                                    </p>
+                                    <p class="control is-expanded">
+                                        <input v-model="awk_text" :class="{ 'is-danger': is_error }" class="input has-text-weight-bold is-size-3"
+                                            type="search"></input>
+                                    </p>
+                                    <p class="control">
+                                        <a class="button is-static is-size-3 has-text-weight-bold">
+                                            '
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- sample -->
+                            <div class="notification">
+                                <button :class="[show_sample ? 'minus' : 'plus']" @click="show_sample=!show_sample"></button>
+                                <template v-if="show_sample">
+                                    <a v-for="item in sample_list" @click="sample_button_click(item)"
+                                         class="button is-warning is-rounded has-text-weight-semibold sample-button">
+                                        {{item.title}}
+                                    </a>
+                                </template>
+                                <template v-else>
+                                    <span>&nbsp;</span>
+                                </template>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- stdin stdout -->
+            <div class="row columns">
+                <!-- stdin -->
+                <div class="column is-6">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            <span class="is-size-3 has-text-weight-bold">stdin</span>
+                        </div>
+                        <div class="message-body">
+                            <textarea v-model="stdin_text" class="font_mono textarea has-text-weight-bold"
+                             type="text" rows=15></textarea>
+                        </div>
+                    </article>
+                </div>
+                <!-- stdout -->
+                <div class="column is-6">
+                    <article class="message is-dark">
+                        <div class="message-header">
+                            <span class="is-size-3 has-text-weight-bold">stdout</span>
+                        </div>
+                        <div class="message-body">
+                            <textarea v-text="computed_awk" class="font_mono textarea has-text-weight-bold"
+                             type="text" rows=15 readonly></textarea>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Awk In Web</strong> by muneyuki98.
+                <a class="icon" target="_blank" href="https://github.com/muneyuki98/awk_in_web">
+                    <i class="fab fa-lg fa-github-alt"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- vue -->
+    <script src="js/vue_awk.js"></script>
+</body>
+
+</html>

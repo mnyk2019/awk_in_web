@@ -1,0 +1,109 @@
+/* vue js */
+[v-cloak] {
+    display:none;
+}
+
+/* font */
+.font_mono {
+    font-family: "Courier New", Consolas, monospace;
+    /* line-height: 1.2rem; */
+}
+
+/* original style */
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background-image: linear-gradient(to right, #999999 50%, #dddddd);
+}
+main {
+    padding: 1.4rem;
+}
+.sample-button {
+    margin: .2rem;
+}
+
+/* bulma orverride */
+.has-text-weight-bold {
+    font-weight: 900!important;
+}
+.message-body {
+    padding: 0.5rem;
+}
+.message-header {
+    height: 3rem;
+}
+.footer {
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.button.is-static {
+    color: black;
+    padding-left: .6rem;
+    padding-right: .6rem;
+}
+.notification {
+    padding: .2rem 1.6rem .2rem .2rem;
+}
+
+/* .plus, .minus */
+.notification>.plus, .notification>.minus {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+}
+.plus, .minus {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: rgba(10,10,10,.2);
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    outline: 0;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+}
+.plus::after, .plus::before, .minus::after, .minus::before {
+    background-color: #fff;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
+.plus::after {
+    height: 50%;
+    width: 2px;
+}
+.plus::before  {
+    height: 2px;
+    width: 50%;
+}
+.minus::after {
+    height: 2px;
+    width: 50%;
+}
+.plus:hover, .minus:hover {
+    background-color: rgba(10,10,10,.3);
+}
+.plus:active, .minus:active {
+    background-color: rgba(10,10,10,.4);
+}
+
